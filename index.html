@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M5 - Futuristic Product Showcase</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Background Effects -->
+    <div class="bg-effects">
+        <div class="particles"></div>
+        <div class="grid-overlay"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h1 class="logo-text">M5</h1>
+                <div class="logo-glow"></div>
+            </div>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#products" class="nav-link">Products</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-actions">
+                <button class="btn-secondary" id="submitProductBtn">
+                    <i class="fas fa-upload"></i>
+                    Submit Product
+                </button>
+                <button class="btn-primary" id="adminLoginBtn" style="display: none;">
+                    <i class="fas fa-lock"></i>
+                    Admin Login
+                </button>
+                <button class="btn-primary" id="adminBtn" style="display: none;">
+                    <i class="fas fa-cog"></i>
+                    Admin Panel
+                </button>
+                <button class="btn-secondary" id="logoutBtn" style="display: none;">
+                    <i class="fas fa-sign-out-alt"></i>
+                    Logout
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="title-line">Welcome to</span>
+                    <span class="title-main">M5</span>
+                    <span class="title-sub">The Future of Product Discovery</span>
+                </h1>
+                <p class="hero-description">
+                    Explore cutting-edge products in our futuristic marketplace. 
+                    Discover innovation, share your creations, and be part of the next generation.
+                </p>
+                <div class="hero-buttons">
+                    <button class="btn-primary btn-large" id="exploreBtn">
+                        <span>Explore Products</span>
+                        <i class="fas fa-rocket"></i>
+                    </button>
+                    <button class="btn-secondary btn-large" id="submitBtn">
+                        <span>Submit Your Product</span>
+                        <i class="fas fa-upload"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-cards">
+                    <div class="card card-1"></div>
+                    <div class="card card-2"></div>
+                    <div class="card card-3"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Products</h2>
+                <p class="section-subtitle">Discover the latest innovations</p>
+            </div>
+            
+            <div class="filter-bar">
+                <div class="filter-group">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="tech">Technology</button>
+                    <button class="filter-btn" data-filter="design">Design</button>
+                    <button class="filter-btn" data-filter="innovation">Innovation</button>
+                </div>
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Search products...">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+
+            <div class="products-grid" id="productsGrid">
+                <!-- Products will be dynamically loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">About M5</h2>
+                    <p class="about-description">
+                        M5 is a revolutionary platform that bridges the gap between innovation and discovery. 
+                        We provide a space where creators can showcase their products and users can explore 
+                        the latest technological advancements in a futuristic, interactive environment.
+                    </p>
+                    <div class="stats">
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="0">0</div>
+                            <div class="stat-label">Products</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="0">0</div>
+                            <div class="stat-label">Creators</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="0">0</div>
+                            <div class="stat-label">Innovations</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-visual">
+                    <div class="tech-circles">
+                        <div class="circle circle-1"></div>
+                        <div class="circle circle-2"></div>
+                        <div class="circle circle-3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="contact-content">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="contact-description">
+                    Ready to showcase your innovation or have questions about M5?
+                </p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>contact@m5.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+1 (555) 123-4567</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Future City, FC 12345</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>M5</h3>
+                    <p>The Future of Product Discovery</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#products">Products</a>
+                    <a href="#about">About</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 M5. All rights reserved. Built for the future.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <!-- Submit Product Modal -->
+    <div id="submitProductModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Submit Your Product</h3>
+                <button class="close-btn" id="closeSubmitModal">&times;</button>
+            </div>
+            <form id="submitProductForm" class="modal-form">
+                <div class="form-group">
+                    <label for="submitProductName">Product Name</label>
+                    <input type="text" id="submitProductName" required>
+                </div>
+                <div class="form-group">
+                    <label for="submitProductDescription">Description</label>
+                    <textarea id="submitProductDescription" rows="4" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="submitProductPrice">Price</label>
+                    <input type="number" id="submitProductPrice" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label for="submitProductCategory">Category</label>
+                    <select id="submitProductCategory" required>
+                        <option value="tech">Technology</option>
+                        <option value="design">Design</option>
+                        <option value="innovation">Innovation</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="submitProductImage">Image URL</label>
+                    <input type="url" id="submitProductImage" required>
+                </div>
+                <div class="form-group">
+                    <label for="submitCreatorName">Your Name</label>
+                    <input type="text" id="submitCreatorName" required>
+                </div>
+                <div class="form-group">
+                    <label for="submitCreatorEmail">Your Email</label>
+                    <input type="email" id="submitCreatorEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="submitCreatorPhone">Your Phone (Optional)</label>
+                    <input type="tel" id="submitCreatorPhone">
+                </div>
+                <div class="form-group">
+                    <label for="submitCreatorWebsite">Your Website (Optional)</label>
+                    <input type="url" id="submitCreatorWebsite">
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary" id="cancelSubmit">Cancel</button>
+                    <button type="submit" class="btn-primary">Submit for Review</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Admin Login Modal -->
+    <div id="adminLoginModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Admin Login</h3>
+                <button class="close-btn" id="closeLoginModal">&times;</button>
+            </div>
+            <form id="adminLoginForm" class="modal-form">
+                <div class="form-group">
+                    <label for="adminPassword">Admin Password</label>
+                    <input type="password" id="adminPassword" required>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary" id="cancelLogin">Cancel</button>
+                    <button type="submit" class="btn-primary">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Admin Add Product Modal -->
+    <div id="adminAddProductModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Add New Product (Admin)</h3>
+                <button class="close-btn" id="closeAdminAddModal">&times;</button>
+            </div>
+            <form id="adminAddProductForm" class="modal-form">
+                <div class="form-group">
+                    <label for="adminProductName">Product Name</label>
+                    <input type="text" id="adminProductName" required>
+                </div>
+                <div class="form-group">
+                    <label for="adminProductDescription">Description</label>
+                    <textarea id="adminProductDescription" rows="4" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="adminProductPrice">Price</label>
+                    <input type="number" id="adminProductPrice" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label for="adminProductCategory">Category</label>
+                    <select id="adminProductCategory" required>
+                        <option value="tech">Technology</option>
+                        <option value="design">Design</option>
+                        <option value="innovation">Innovation</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="adminProductImage">Image URL</label>
+                    <input type="url" id="adminProductImage" required>
+                </div>
+                <div class="form-group">
+                    <label for="adminProductCreator">Creator Name</label>
+                    <input type="text" id="adminProductCreator" required>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary" id="cancelAdminAdd">Cancel</button>
+                    <button type="submit" class="btn-primary">Add Product</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Admin Modal -->
+    <div id="adminModal" class="modal">
+        <div class="modal-content admin-content">
+            <div class="modal-header">
+                <h3>Admin Panel</h3>
+                <button class="close-btn" id="closeAdminModal">&times;</button>
+            </div>
+            <div class="admin-tabs">
+                <button class="tab-btn active" data-tab="submissions">Submissions</button>
+                <button class="tab-btn" data-tab="products">Published Products</button>
+                <button class="tab-btn" data-tab="settings">Settings</button>
+            </div>
+            <div class="tab-content">
+                <div id="submissions-tab" class="tab-pane active">
+                    <div class="admin-actions">
+                        <button class="btn-primary" id="adminAddProduct">
+                            <i class="fas fa-plus"></i>
+                            Add Product Directly
+                        </button>
+                        <button class="btn-secondary" id="exportData">
+                            <i class="fas fa-download"></i>
+                            Export Data
+                        </button>
+                    </div>
+                    <div class="submissions-list" id="submissionsList">
+                        <!-- User submissions will be loaded here -->
+                    </div>
+                </div>
+                <div id="products-tab" class="tab-pane">
+                    <div class="admin-actions">
+                        <button class="btn-primary" id="adminAddProductFromTab">
+                            <i class="fas fa-plus"></i>
+                            Add Product
+                        </button>
+                        <button class="btn-secondary" id="exportDataFromTab">
+                            <i class="fas fa-download"></i>
+                            Export Data
+                        </button>
+                    </div>
+                    <div class="admin-products-list" id="adminProductsList">
+                        <!-- Published products will be loaded here -->
+                    </div>
+                </div>
+                <div id="settings-tab" class="tab-pane">
+                    <div class="settings-group">
+                        <h4>Website Settings</h4>
+                        <div class="setting-item">
+                            <label for="siteTitle">Site Title</label>
+                            <input type="text" id="siteTitle" value="M5">
+                        </div>
+                        <div class="setting-item">
+                            <label for="siteDescription">Site Description</label>
+                            <textarea id="siteDescription" rows="3">The Future of Product Discovery</textarea>
+                        </div>
+                        <div class="setting-item">
+                            <label for="adminPassword">Admin Password</label>
+                            <input type="password" id="adminPasswordSetting" placeholder="Change admin password">
+                        </div>
+                        <button class="btn-primary" id="saveSettings">Save Settings</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Detail Modal -->
+    <div id="productDetailModal" class="modal">
+        <div class="modal-content product-detail">
+            <div class="modal-header">
+                <h3 id="detailProductName">Product Name</h3>
+                <button class="close-btn" id="closeDetailModal">&times;</button>
+            </div>
+            <div class="product-detail-content">
+                <div class="product-detail-image">
+                    <img id="detailProductImage" src="" alt="">
+                </div>
+                <div class="product-detail-info">
+                    <p id="detailProductDescription"></p>
+                    <div class="product-detail-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">Price:</span>
+                            <span class="meta-value" id="detailProductPrice"></span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Category:</span>
+                            <span class="meta-value" id="detailProductCategory"></span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Creator:</span>
+                            <span class="meta-value" id="detailProductCreator"></span>
+                        </div>
+                    </div>
+                    <div class="product-actions">
+                        <button class="btn-primary">Contact Creator</button>
+                        <button class="btn-secondary">Share Product</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
